@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Case1 {
 
@@ -38,6 +39,8 @@ public class Case1 {
         driver.findElement(By.cssSelector("[jsname='WxTTNd']")).click();
         driver.findElement(By.cssSelector("[jsname='Ax5wH']")).click();
         driver.findElement(By.cssSelector("[jsname='Pt8tGc']")).click();
+
+
 
     }
 

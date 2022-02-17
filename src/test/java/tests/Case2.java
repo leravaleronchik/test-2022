@@ -9,14 +9,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Case2 {
 
     private static WebDriver driver;
+    private static details details;
 
     @BeforeAll
     public static void init () {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
+        details = new details(driver);
     }
 
     @Test
@@ -28,6 +32,7 @@ public class Case2 {
         driver.findElement(By.cssSelector("[jsname='WxTTNd']")).click();
         driver.findElement(By.cssSelector("[jsname='bkEvMb']")).click();
         driver.findElement(By.cssSelector("[jsname='Pt8tGc']")).click();
+        assertEquals("Infinity", details.getInfinity());
     }
         @AfterAll
         public static void teardown () {
