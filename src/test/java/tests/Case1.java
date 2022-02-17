@@ -13,11 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Case1 {
 
     private static WebDriver driver;
+    private static details details;
 
     @BeforeAll
     public static void init () {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
+        details = new details(driver);
     }
 
     @Test
@@ -39,8 +41,7 @@ public class Case1 {
         driver.findElement(By.cssSelector("[jsname='WxTTNd']")).click();
         driver.findElement(By.cssSelector("[jsname='Ax5wH']")).click();
         driver.findElement(By.cssSelector("[jsname='Pt8tGc']")).click();
-
-
+        assertEquals("1", details.getResult());
 
     }
 

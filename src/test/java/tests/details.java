@@ -11,6 +11,8 @@ public class details {
     public WebElement Infinity;
     @FindBy(css="div[class=\"jlkklc\"] #cwos.qv3Wpe")
     public WebElement Error;
+    @FindBy(css="div[class=\"jlkklc\"] #cwos.qv3Wpe")
+    public WebElement Result;
 
        public details(WebDriver driver) {
         initElements(driver, this);
@@ -20,5 +22,8 @@ public class details {
     }
     public String getError() {
         return Error.getText();
+    }
+    public String getResult() {
+        return Result.getText();
     }
 }
